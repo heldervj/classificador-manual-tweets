@@ -30,12 +30,3 @@ def index(request):
         }
 
         return render(request, 'index.html', context)
-
-def salva_objeto(request, tweet_id, classificacao):
-    
-    t = Tweet.objects.get(pk=tweet_id)
-
-    if not(t.primeira_avaliacao):
-        t.primeira_avaliacao = classificacao
-
-    t.save()
