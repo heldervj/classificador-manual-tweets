@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fa/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script> 
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <title>Me ajuda aí</title>
+</head>
+
+<body>
+
+    {% csrf_token %}
+
+    <div id="id_tweet" style="display:none">{{ id }}</div>
+
+    <!-- <div class="row">
+        <div class="spinner-border" role="status" id="loading"> 
+            <span class="sr-only">Loading...</span>
+          </div>
+    </div> -->
+
+
+    <div class="container">
+        <div class="jumbotron">
+            <div class="container">
+                <p class="lead"> {{ frase |safe }} </p>
+                <hr class="my-4">
+                <div class="row">
+                    <div class="co-sm-3 mx-auto">
+                        <a class="btn btn-primary btn-lg" role="button" id="bt_positivo">Positivo</a>
+                    </div>
+                    <div class="co-sm-3 mx-auto">
+                        <a class="btn btn-primary btn-lg" role="button" id="bt_negativo">Negativo</a>
+                    </div>
+                    <div class="co-sm-3 mx-auto">
+                        <a class="btn btn-primary btn-lg" role="button" id="bt_neutro">Neutro</a>
+                    </div>
+                    <div class="co-sm-3 mx-auto">
+                        <a class="btn btn-primary btn-lg" role="button" id="bt_descartar">Descartar</a>
+                    </div>
+                </div>
+                <hr class="my-4">
+                <div class="row">
+                    <div class="co-sm-12 mx-auto">
+                        {{ avaliados }}/{{ total }}
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+
+</body>
+
+<script src="{% static 'js/chart.js' %}"></script>
+
+</html>
